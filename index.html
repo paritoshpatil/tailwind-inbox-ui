@@ -9,11 +9,22 @@
 
     <!-- Installing Tailwind via CDN -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Adding Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-200 flex flex-row space-between">
 
-    <div class="flex flex-col bg-white items-center p-4 w-20 h-screen border-r-2 border-gray-200">
+    <div class="flex flex-col bg-white items-center p-4 w-20 h-screen border-r border-gray-200">
         <!-- Logo -->
         <div class="flex items-center mb-10">
             <a href="" class="">
@@ -90,23 +101,345 @@
     </div>
 
 
-    <div class="w-1/3 h-screen bg-white p-6">
-        <div class="header flex flex-row justify-between">
-            <div class="heading flex flex-row items-center">
-                <div class="text-2xl font-semibold">Messages</div>
-                <div class="rounded-xl bg-gray-200 px-2 text-md text-gray-600 font-medium ml-3 mt-1">10</div>
+    <div class="w-1/3 h-screen bg-white overflow-y-auto">
+        <div class="py-6 px-10 border-b border-gray-200 bg-white sticky top-0">
+            <div class="header flex flex-row justify-between">
+                <div class="heading flex flex-row items-center">
+                    <div class="text-2xl font-medium">Messages</div>
+                    <div class="rounded-xl bg-gray-200 px-2 text-md text-gray-600 font-medium ml-3 mt-1">10</div>
+                </div>
+                <div class="rounded-lg bg-purple-200 p-2 flex items-center">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-800" fill="currentColor"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="rounded-lg bg-purple-200 p-2 flex items-center">
-                <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-800" fill="currentColor"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                    </svg>
-                </button>
+
+            <div class="combo flex my-4 flex w-full bg-white border py-2 px-4 rounded-lg shadow-sm">
+                <select name="Message Type" id="" class="outline-none w-full">
+                    <option value="All Messages">All Messages</option>
+                    <option value="Important">Important</option>
+                    <option value="Urgent">Urgent</option>
+                    <option value="Flagged">Flagged</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex flex-col justify-start">
+
+            <div class="message flex flex-row items-start space-x-4 border-b border-gray-200 p-6 bg-purple-50">
+                <div class="dot pt-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-2 w-2 text-purple-800"
+                        fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg></div>
+
+                <div class="content w-full">
+                    <h3 class="font-medium">Contract Amendment</h3>
+                    <span class="text-gray-400">Lorem ipsum dolor sit</span>
+                    <div class="time flex flex-row justify-between">
+                        <div class="text-gray-400">Location</div>
+                        <div class="text-gray-400">2:13 PM</div>
+
+                    </div>
+                    <div class="pills my-2">
+                        <span
+                            class="bg-purple-200 rounded-full text-purple-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">REQUEST</span>
+                        <span
+                            class="rounded-full border border-gray-800 text-gray-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">EMAIL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message flex hover:bg-gray-100 flex-row items-start space-x-4 border-b border-gray-200 p-6">
+                <div class="dot pt-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-2 w-2 text-transparent"
+                        fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg></div>
+
+                <div class="content w-full">
+                    <h3 class="font-medium">Cancellation</h3>
+                    <span class="text-gray-400">Lorem ipsum dolor sit</span>
+                    <div class="time flex flex-row justify-between">
+                        <div class="text-gray-400">Location</div>
+                        <div class="text-gray-400">2:13 PM</div>
+
+                    </div>
+                    <div class="pills my-2">
+                        <span
+                            class="bg-green-200 rounded-full text-green-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">SOLVED</span>
+                        <span
+                            class="rounded-full border border-gray-800 text-gray-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">EMAIL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message flex hover:bg-gray-100 flex-row items-start space-x-4 border-b border-gray-200 p-6">
+                <div class="dot pt-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-2 w-2 text-purple-800"
+                        fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg></div>
+
+                <div class="content w-full">
+                    <h3 class="font-medium">Water Damage</h3>
+                    <span class="text-gray-400">Lorem ipsum dolor sit</span>
+                    <div class="time flex flex-row justify-between">
+                        <div class="text-gray-400">Nashik, MH</div>
+                        <div class="text-gray-400">Yesterday</div>
+
+                    </div>
+                    <div class="pills my-2">
+                        <span
+                            class="bg-yellow-200 rounded-full text-yellow-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">DAMAGE
+                            REPORT</span>
+                        <span
+                            class="rounded-full border border-gray-800 text-gray-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">POST</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message flex hover:bg-gray-100 flex-row items-start space-x-4 border-b border-gray-200 p-6">
+                <div class="dot pt-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-800"
+                        viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                            clip-rule="evenodd" />
+                    </svg></div>
+
+                <div class="content w-full">
+                    <h3 class="font-medium">Subject of the message</h3>
+                    <span class="text-gray-400">Lorem ipsum dolor sit</span>
+                    <div class="time flex flex-row justify-between">
+                        <div class="text-gray-400">Location</div>
+                        <div class="text-gray-400">2:13 PM</div>
+
+                    </div>
+                    <div class="pills my-2">
+                        <span
+                            class="bg-purple-200 rounded-full text-purple-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">REQUEST</span>
+                        <span
+                            class="rounded-full border border-gray-800 text-gray-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">EMAIL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message flex hover:bg-gray-100 flex-row items-start space-x-4 border-b border-gray-200 p-6">
+                <div class="dot pt-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-2 w-2 text-purple-800"
+                        fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg></div>
+
+                <div class="content w-full">
+                    <h3 class="font-medium">Subject of the message</h3>
+                    <span class="text-gray-400">Lorem ipsum dolor sit</span>
+                    <div class="time flex flex-row justify-between">
+                        <div class="text-gray-400">Location</div>
+                        <div class="text-gray-400">2:13 PM</div>
+
+                    </div>
+                    <div class="pills my-2">
+                        <span
+                            class="bg-purple-200 rounded-full text-purple-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">REQUEST</span>
+                        <span
+                            class="rounded-full border border-gray-800 text-gray-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">EMAIL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message flex hover:bg-gray-100 flex-row items-start space-x-4 border-b border-gray-200 p-6">
+                <div class="dot pt-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-2 w-2 text-purple-800"
+                        fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg></div>
+
+                <div class="content w-full">
+                    <h3 class="font-medium">Subject of the message</h3>
+                    <span class="text-gray-400">Lorem ipsum dolor sit</span>
+                    <div class="time flex flex-row justify-between">
+                        <div class="text-gray-400">Location</div>
+                        <div class="text-gray-400">2:13 PM</div>
+
+                    </div>
+                    <div class="pills my-2">
+                        <span
+                            class="bg-purple-200 rounded-full text-purple-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">REQUEST</span>
+                        <span
+                            class="rounded-full border border-gray-800 text-gray-800 py-1 px-3 text-sm font-semibold mr-2 cursor-pointer">EMAIL</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="w-full h-screen bg-blue-200">Main</div>
+    <div class="flex flex-col w-screen h-screen bg-gray-200 py-6 px-10 justify-between">
+
+        <div class="header flex flex-row justify-between items-center">
+            <div
+                class="search relative text-xl py-2 px-4 flex flex-row items-center bg-white space-x-3 rounded-lg w-1/2 shadow-md">
+                <div class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+
+                <input type="text" class="searchbar outline-none w-full"
+                    placeholder="Search for objects, contacts, documents, etc.">
+            </div>
+            <div class="user flex flex-row items-center">
+                <img src="https://images.unsplash.com/photo-1531727991582-cfd25ce79613?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&crop=facearea&auto=format&fit=crop&w=200&h=200&q=80&p=20"
+                    alt="" class="rounded-full w-8 h-8 shadow-md">
+                <select name="User" id="" class="bg-transparent ml-4 text-lg font-medium text-gray-500">
+                    <option value="">Caroline Shaw</option>
+                    <option value="">Paritosh Patil</option>
+                    <option value="">Purva Khot</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex flex-row items-start">
+
+            <div class="flex flex-col w-4/6 space-y-10">
+                <div class="flex flex-row  justify-between">
+                    <div class="text-2xl text-gray-600">Contract Amendment</div>
+
+                    <div class="flex flex-row items-center">
+                        <button class="rounded-md bg-white shadow-md py-1 px-3">Mark as Resolved</button>
+                        <button class="text-gray-600 ml-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sender-info flex flex-row items-center space-x-4">
+                    <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&crop=faces&fit=facearea&facepad=2&w=144&h=144&q=80"
+                        alt="" class="w-10 h-10 rounded-full">
+
+                    <span class="text-lg font-medium text-gray-600">
+                        Nitin Ghosh
+                    </span>
+
+                    <span class="text-md text-gray-400">
+                        2:13 PM
+                    </span>
+                </div>
+
+                <div class="content text-justify text-lg">
+                    Good Afternoon,
+                    <br> <br>
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error libero fugit, earum quos non, aliquid
+                    illo expedita adipisci nobis architecto iste! Assumenda nulla dicta animi adipisci eligendi officia
+                    neque ratione impedit numquam, quae obcaecati commodi excepturi. Odio, ipsa laudantium voluptas
+                    ullam quasi maiores ratione? Perspiciatis nesciunt laborum distinctio dolore? Esse!
+
+                    <br><br>
+                    Regards,
+                    <br>
+                    Nitin Ghosh.
+                </div>
+
+                <div class="w-1/2 bg-white rounded-md shadow-sm p-3 flex flex-row items-center justify-between">
+                    <div class="flex flex-row  space-x-4 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-400" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+
+                        <div>
+                            <span>Document Name</span>
+                            <br>
+                            <span>PDF · 256KB</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row space-x-2">
+                        <button class="p-2 rounded-lg shadow-sm border border-gray-200 w-10 h-10"> <svg
+                                xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <button class="p-2 rounded-lg shadow-sm border border-gray-200 w-10 h-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="ml-8 bg-white rounded-lg shadow-md p-4 flex flex-col justify-between w-2/6">
+                <span class="text-gray-400">
+                    Visteria Apt.
+                </span>
+
+                <img src="https://images.unsplash.com/photo-1530398231547-70832467b336?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=300&q=80"
+                    alt="" class="rounded-md mt-4">
+
+                <div class="mt-4">
+                    <span class="font-semibold">Nitin Ghosh</span>
+                    <br>
+                    <span class="text-gray-400">+91 99988 86573</span>
+                    <br>
+                    <span class="text-gray-400">nitin.ghosh@nextmail.com</span>
+                </div>
+
+                <div class="mt-8 text-sm">
+                    <table class="table-auto w-full">
+                        <tr class="border-b border-gray-200">
+                            <td class="w-3/5 p-2">Tenant Since</td>
+                            <td class="w-2/5 p-2 text-right font-semibold">September 01, 2019</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="w-3/5 p-2">Cold Rent</td>
+                            <td class="w-2/5 p-2 text-right font-semibold">$685</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="w-3/5 p-2">Living Space</td>
+                            <td class="w-2/5 p-2 text-right font-semibold">124 sq. meters</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="w-3/5 p-2">Rooms</td>
+                            <td class="w-2/5 p-2 text-right font-semibold">4 Rooms</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button class="mt-8 p-2 w-full bg-gray-200 rounded-lg text-gray-600">View Object Details</button>
+                <button class="mt-2 p-2 w-full bg-gray-200 rounded-lg text-gray-600">Show Documents</button>
+            </div>
+
+        </div>
+
+        <div class="bg-white rounded-md shadow-md p-2 w-2/3 flex flex-row items-center">
+            <button><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+                </svg></button>
+            <input type="text" name="" id="" placeholder="Write a message" class="ml-4 text-lg outline-none">
+            <button class="bg-purple-400 py-2 px-5 text-white ml-auto rounded-md text-sm">Send</button>
+        </div>
+    </div>
 
 </body>
 
